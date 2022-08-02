@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body style="background-color: #226969">
+<h1 style="background-color:darkcyan;text-align:center;margin:30px;color:#8df8bb;font-family: sans-serif;padding:20px;border-radius: 20px">{{ madel.name }}</h1>
+<table border="1" class="styled-table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Brand</th>
+        <th>Madel</th>
+        <th>Price</th>
+        <th>Color</th>
+        <th>Memory</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for t in madel_pro %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <th>{{ t.title }}</th>
+            <th>{{ t.description }}</th>
+            <th>{{ t.brand }}</th>
+            <th>{{ t.madel }}</th>
+            <th>{{ t.price }}</th>
+            <th>{{ t.color }}</th>
+            <th>{{ t.memory }}</th>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+<a href="/" class="button">back</a>
+
+</body>
+</html>
